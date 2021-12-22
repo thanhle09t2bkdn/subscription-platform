@@ -27,6 +27,8 @@ class SubscriptionRequest extends ApiFormRequest
     public function rules()
     {
         return [
+            'url' => 'required|url|exists:App\Models\Website,url',
+            'email'=> 'required|max:255|email|unique:\App\Models\Subscription,email,' . $this->request->get('url'),
 
         ];
     }
