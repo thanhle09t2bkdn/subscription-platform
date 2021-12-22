@@ -4,9 +4,9 @@
 namespace App\Http\Requests\Posts;
 
 
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\ApiFormRequest;
 
-class PostCreateRequest extends FormRequest
+class PostCreateRequest extends ApiFormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
