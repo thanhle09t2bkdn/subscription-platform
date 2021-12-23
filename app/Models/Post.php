@@ -8,8 +8,6 @@
 
 namespace App\Models;
 
-use App\Models\Auth\User;
-use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
