@@ -1,0 +1,95 @@
+{
+	"id": "c3905c62-7de7-0200-8d81-2a18b1aebc82",
+	"name": "Subscription Platform Api",
+	"description": "",
+	"order": [
+		"f85177e0-4220-5169-1dd3-aa60a0ac1267",
+		"bc045765-a6b0-ab62-d485-ec17c107cc0e"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1640186709318,
+	"owner": "1413626",
+	"public": false,
+	"requests": [
+		{
+			"id": "bc045765-a6b0-ab62-d485-ec17c107cc0e",
+			"headers": "",
+			"headerData": [],
+			"url": "http://subscription-platform.local/api/subscriptions",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "email",
+					"value": "youremail@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "url",
+					"value": "https://abcnews.go.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1640230217596,
+			"name": "Create Subscription",
+			"description": "",
+			"collectionId": "c3905c62-7de7-0200-8d81-2a18b1aebc82",
+			"responses": []
+		},
+		{
+			"id": "f85177e0-4220-5169-1dd3-aa60a0ac1267",
+			"headers": "",
+			"headerData": [],
+			"url": "http://subscription-platform.local/api/posts",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "title",
+					"value": "test1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "test1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "url",
+					"value": "https://abcnews.go.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1640230220680,
+			"name": "Create Post",
+			"description": "",
+			"collectionId": "c3905c62-7de7-0200-8d81-2a18b1aebc82",
+			"responses": []
+		}
+	]
+}
