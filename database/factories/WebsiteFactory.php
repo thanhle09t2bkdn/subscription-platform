@@ -22,7 +22,7 @@ class WebsiteFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name . 'Website',
+            'name' => $this->faker->name . ' Website',
             'description' => $this->faker->realText,
             'url' => $this->faker->url,
         ];
