@@ -41,7 +41,7 @@ class PostController extends ApiController
 
         $post = $this->postRepository->create($data);
 
-        dispatch(new NotificationToSubscribersJob($post));
+        dispatch(new NotificationToSubscribersJob($post))->onQueue('subscriber-job');
 
         return $this->successResponse($post);
     }
