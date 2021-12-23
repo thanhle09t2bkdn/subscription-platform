@@ -36,8 +36,5 @@ class WebsiteSeeder extends Seeder
                 'url' => $website
             ]);
         }
-        /*Website::factory()
-        ->count(10)
-        ->create();*/
     }
 }
