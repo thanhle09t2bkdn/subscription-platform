@@ -350,7 +350,7 @@
                                     <td>
                                         <p>Hi there,</p>
                                         <p>Title: {{$title}}</p>
-                                        <p>Description: {{$description}}}</p>
+                                        <p>Description: {{$description}}</p>
                                         <p>Good luck! Hope it works.</p>
                                     </td>
                                 </tr>
