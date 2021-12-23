@@ -15,5 +15,4 @@ class EmailService
             $message->to($to, 'Visitor')->subject('Subscription Email');
         });
     }
-
 }

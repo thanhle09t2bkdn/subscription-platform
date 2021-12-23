@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 
 
 use App\Http\Controllers\ApiController;
-use App\Http\Requests\Subscriptions\SubscriptionRequest;
+use App\Http\Requests\Subscriptions\SubscriptionCreateRequest;
 use App\Repositories\SubscriptionRepository;
 
 class SubscriptionController extends ApiController
@@ -26,8 +26,20 @@ class SubscriptionController extends ApiController
     {
         $this->subscriptionRepository = $subscriptionRepository;
     }
-    public function store(SubscriptionRequest $request)
+
+    /**
+     * Create Subscription
+     *
+     * @param SubscriptionCreateRequest $request
+     *
+     * @return mixed
+     */
+    public function store(SubscriptionCreateRequest $request)
     {
-        return $this->successResponse('test');
+        $data = $request->only(['email', 'url']);
+
+        $subscriptions = $this->subscriptionRepository->create($data);
+
+        return $this->successResponse($subscriptions);
     }
 }

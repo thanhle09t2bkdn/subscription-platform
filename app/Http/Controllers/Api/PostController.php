@@ -6,8 +6,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\ApiController;
 use App\Http\Requests\Posts\PostCreateRequest;
+use App\Jobs\Posts\NotificationToSubscribersJob;
 use App\Repositories\PostRepository;
-use App\Services\EmailService;
 
 class PostController extends ApiController
 {
@@ -17,21 +17,32 @@ class PostController extends ApiController
      * @var PostRepository
      */
     private $postRepository;
-    private $emailService;
 
     /**
      * Constructor.
      *
      * @param PostRepository $postRepository
      */
-    public function __construct(PostRepository $postRepository, EmailService $emailService)
+    public function __construct(PostRepository $postRepository)
     {
         $this->postRepository = $postRepository;
-        $this->emailService = $emailService;
     }
+
+    /**
+     * Create post
+     *
+     * @param PostCreateRequest $request
+     *
+     * @return mixed
+     */
     public function store(PostCreateRequest $request)
     {
-        $this->emailService->send('thanhle09t2bkdn@gmail.com', 'test', 'test');
-        return $this->successResponse('test');
+        $data = $request->only(['title', 'description', 'url']);
+
+        $post = $this->postRepository->create($data);
+
+        dispatch(new NotificationToSubscribersJob($post));
+
+        return $this->successResponse($post);
     }
 }

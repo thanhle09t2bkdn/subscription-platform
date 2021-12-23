@@ -28,7 +28,7 @@ class PostCreateRequest extends ApiFormRequest
     {
         return [
             'title' => 'required|min:3|max:255',
-            'url' => 'required|url|exists:App\Models\Website,url',
+            'url' => 'required|exists:App\Models\Website,url',
             'description' => 'required',
         ];
     }
